@@ -51,19 +51,19 @@ export default function Home() {
       <div className="w-full h-[122px] bg-black">
         <div className="w-full max-w-xl h-full mx-auto flex justify-between items-center">
           <div>
-            <Image src={VersaceLogo} alt="hero-image" className="w-[166px] h-auto" />
+            <Image src={VersaceLogo} alt="versace-logo" className="w-[166px] h-auto" />
           </div>
           <div>
-            <Image src={ZaraLogo} alt="hero-image" className="w-[91px] h-auto" />
+            <Image src={ZaraLogo} alt="zara-logo" className="w-[91px] h-auto" />
           </div>
           <div>
-            <Image src={GucciLogo} alt="hero-image" className="w-[156px] h-auto" />
+            <Image src={GucciLogo} alt="gucci-logo" className="w-[156px] h-auto" />
           </div>
           <div>
-            <Image src={PradaLogo} alt="hero-image" className="w-[194px] h-auto" />
+            <Image src={PradaLogo} alt="prada-logo" className="w-[194px] h-auto" />
           </div>
           <div>
-            <Image src={CalvinLogo} alt="hero-image" className="w-[206px] h-auto" />
+            <Image src={CalvinLogo} alt="calvin-logo" className="w-[206px] h-auto" />
           </div>
         </div>
       </div>

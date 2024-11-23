@@ -7,8 +7,8 @@ import CartIcon from "../../../public/cart-icon.svg";
 import ProfileIcon from "../../../public/profile-icon.svg";
 import CloseIcon from "../../../public/close-icon.svg";
 import SearchIcon from "../../../public/search-icon.svg";
-import ChevronDownIcon from "../../../public/chevron-down-icon.svg";
-import { X } from "lucide-react";
+// import ChevronDownIcon from "../../../public/chevron-down-icon.svg";
+// import { X } from "lucide-react";
 
 export default function Navbar() {
   return (
