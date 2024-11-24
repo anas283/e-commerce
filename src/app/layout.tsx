@@ -2,9 +2,23 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const satoshiRegular = localFont({
-  src: "./fonts/Satoshi-Regular.woff",
-});
+const satoshi = localFont({
+  src: [
+    {
+      path: './fonts/Satoshi-Regular.woff',
+      weight: '400'
+    },
+    {
+      path: './fonts/Satoshi-Medium.woff',
+      weight: '500'
+    },
+    {
+      path: './fonts/Satoshi-Bold.woff',
+      weight: '700'
+    }
+  ],
+  variable: '--font-satoshi'
+})
 
 export const metadata: Metadata = {
   title: "E-commerce",
@@ -19,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${satoshiRegular.className} antialiased`}
+        className={`${satoshi.variable} font-satoshi antialiased`}
       >
         {children}
       </body>

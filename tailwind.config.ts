@@ -58,6 +58,9 @@ export default {
   		},
 			maxWidth: {
 				'xl': '1240px'
+			},
+			fontFamily: {
+				satoshi: ['var(--font-satoshi)']
 			}
   	}
   },

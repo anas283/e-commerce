@@ -7,6 +7,8 @@ import ZaraLogo from "../../../public/zara-logo.svg";
 import GucciLogo from "../../../public/gucci-logo.svg";
 import PradaLogo from "../../../public/prada-logo.svg";
 import CalvinLogo from "../../../public/calvin-logo.svg";
+import ProductCard from "../components/product-card";
+import { newArrivalsData } from "../data/new-arrivals";
 
 const integralCF = localFont({
   src: "../fonts/integralcf-bold.woff",
@@ -51,19 +53,44 @@ export default function Home() {
       <div className="w-full h-[122px] bg-black">
         <div className="w-full max-w-xl h-full mx-auto flex justify-between items-center">
           <div>
-            <Image src={VersaceLogo} alt="versace-logo" className="w-[166px] h-auto" />
+            <Image src={VersaceLogo} alt="versace-logo" className="max-w-[166px] w-auto h-auto" />
           </div>
           <div>
-            <Image src={ZaraLogo} alt="zara-logo" className="w-[91px] h-auto" />
+            <Image src={ZaraLogo} alt="zara-logo" className="max-w-[91px] w-auto h-auto" />
           </div>
           <div>
-            <Image src={GucciLogo} alt="gucci-logo" className="w-[156px] h-auto" />
+            <Image src={GucciLogo} alt="gucci-logo" className="max-w-[156px] w-auto h-auto" />
           </div>
           <div>
-            <Image src={PradaLogo} alt="prada-logo" className="w-[194px] h-auto" />
+            <Image src={PradaLogo} alt="prada-logo" className="max-w-[194px] w-auto h-auto" />
           </div>
           <div>
-            <Image src={CalvinLogo} alt="calvin-logo" className="w-[206px] h-auto" />
+            <Image src={CalvinLogo} alt="calvin-logo" className="max-w-[206px] w-auto h-auto" />
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full">
+        <div className="w-full max-w-xl mx-auto py-16">
+          <h3 className={`${integralCF.className} text-5xl uppercase text-center`}>
+            New Arrivals
+          </h3>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 mt-14">
+            {newArrivalsData.map((data, key) => {
+              return (
+                <ProductCard 
+                  key={key}
+                  data={data} 
+                />
+              )
+            })}
+          </div>
+
+          <div className="flex justify-center pt-10">
+            <Button variant="outline" className="rounded-full w-[210px] h-[52px] font-medium px-4">
+              View All
+            </Button>
           </div>
         </div>
       </div>

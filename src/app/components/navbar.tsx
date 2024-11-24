@@ -46,6 +46,7 @@ export default function Navbar() {
             <Input 
               className="bg-[#F0F0F0] border-0 rounded-full w-full h-12 pl-12 text-base" 
               placeholder="Search for products..." 
+              style={{ fontSize: '16px' }}
             />
           </div>
           <div className="flex justify-between items-center gap-1">
