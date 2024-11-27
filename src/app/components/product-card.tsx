@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Product } from "../data/new-arrivals";
 import StarFull from "../../../public/star-full.svg";
 import StarHalf from "../../../public/star-half.svg";
+import { Product } from "../models/product";
 
 interface Props {
   data: Product 

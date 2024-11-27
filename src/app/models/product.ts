@@ -1,3 +1,5 @@
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
 export interface Product {
   id: number,
   title: string,
@@ -5,5 +7,5 @@ export interface Product {
   originalPrice: number | null,
   discountPercent: number | null,
   rating: number,
-  image: string | object
+  image: string | StaticImport
 }
