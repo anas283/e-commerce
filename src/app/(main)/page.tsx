@@ -9,6 +9,7 @@ import PradaLogo from "../../../public/prada-logo.svg";
 import CalvinLogo from "../../../public/calvin-logo.svg";
 import ProductCard from "../components/product-card";
 import { newArrivalsData } from "../data/new-arrivals";
+import { topSellingData } from "../data/top-selling";
 
 const integralCF = localFont({
   src: "../fonts/integralcf-bold.woff",
@@ -94,6 +95,32 @@ export default function Home() {
           </div>
         </div>
       </div>
+        
+      <div className="w-full">
+        <div className="w-full max-w-xl mx-auto py-16 border-t">
+          <h3 className={`${integralCF.className} text-5xl uppercase text-center`}>
+            Top Selling
+          </h3>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 mt-14">
+            {topSellingData.map((data, key) => {
+              return (
+                <ProductCard 
+                  key={key}
+                  data={data} 
+                />
+              )
+            })}
+          </div>
+
+          <div className="flex justify-center pt-10">
+            <Button variant="outline" className="rounded-full w-[210px] h-[52px] font-medium px-4">
+              View All
+            </Button>
+          </div>
+        </div>
+      </div>
+
     </div>
   )
 }

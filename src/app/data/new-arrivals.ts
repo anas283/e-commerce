@@ -2,16 +2,7 @@ import Product1Image from "../../../public/product-1.svg";
 import Product2Image from "../../../public/product-2.svg";
 import Product3Image from "../../../public/product-3.svg";
 import Product4Image from "../../../public/product-4.svg";
-
-export interface Product {
-  id: number,
-  title: string,
-  price: number,
-  originalPrice: number | null,
-  discountPercent: number | null,
-  rating: number,
-  image: string
-}
+import { Product } from "../models/product";
 
 export const newArrivalsData: Product[] = [
   {
