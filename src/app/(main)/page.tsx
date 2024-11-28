@@ -10,12 +10,43 @@ import CalvinLogo from "../../../public/calvin-logo.svg";
 import ProductCard from "../components/product-card";
 import { newArrivalsData } from "../data/new-arrivals";
 import { topSellingData } from "../data/top-selling";
+import CasualShirt from "../../../public/casual.png";
+import FormalShirt from "../../../public/formal.png";
+import PartyShirt from "../../../public/party.png";
+import GymShirt from "../../../public/gym.png";
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { reviewsData } from "../data/reviews";
+import StarFull from "../../../public/star-full.svg";
+import StarHalf from "../../../public/star-half.svg";
+import VerifiedLogo from "../../../public/verified.svg";
 
 const integralCF = localFont({
   src: "../fonts/integralcf-bold.woff",
 });
 
 export default function Home() {
+
+  const renderStars = (rating: number) => {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    const stars: JSX.Element[] = [];
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<Image src={StarFull} alt="star" width={18.49} height={18.49} />);
+    }
+    if (hasHalfStar) {
+      stars.push(<Image src={StarHalf} alt="star" width={8.79} height={16.72} />);
+    }
+    return stars;
+  }
+
   return (
     <div>
       <div className="bg-[#F2F0F1] w-full min-h-[663px]">
@@ -121,6 +152,75 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="w-full">
+        <div className="w-full max-w-xl mx-auto rounded-[40px] bg-[#F0F0F0] p-10">
+          <h3 className={`${integralCF.className} text-5xl uppercase text-center`}>
+            Browse by dress style
+          </h3>
+
+          <div className="w-full grid grid-cols-3 mt-10 gap-4">
+            <div className="h-[289px] rounded-[20px] overflow-hidden relative">
+              <span className="absolute top-5 left-6 text-4xl font-bold">Casual</span>
+              <Image className="w-full h-full" src={CasualShirt} alt="casual-shirt" />
+            </div>
+            <div className="h-[289px] rounded-[20px] col-span-2 overflow-hidden relative">
+              <span className="absolute top-5 left-6 text-4xl font-bold">Formal</span>
+              <Image className="w-full h-full" src={FormalShirt} alt="formal-shirt" />
+            </div>
+          </div>
+
+          <div className="w-full grid grid-cols-3 mt-4 gap-4">
+            <div className="h-[289px] rounded-[20px] col-span-2 overflow-hidden relative">
+              <span className="absolute top-5 left-6 text-4xl font-bold">Party</span>
+              <Image className="w-full h-full" src={PartyShirt} alt="party-shirt" />
+            </div>
+            <div className="h-[289px] rounded-[20px] overflow-hidden relative">
+              <span className="absolute top-5 left-6 text-4xl font-bold">Gym</span>
+              <Image className="w-full h-full" src={GymShirt} alt="gym-shirt" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full">
+        <div className="w-full max-w-xl mx-auto my-16 relative">
+          <h3 className={`${integralCF.className} text-5xl uppercase text-left`}>
+            Our Happy Customers
+          </h3>
+
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            className="static w-full mt-7"
+          >
+            <CarouselContent>
+              {reviewsData.map((data, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card className="min-h-[240px] shadow-none">
+                      <CardContent className="flex flex-col p-6 gap-2">
+                        <div className="flex h-[18.49px] gap-0.5">
+                          {renderStars(data.rating)}
+                        </div>
+                        <div className="flex flex-row gap-2">
+                          <h5 className="text-xl font-bold">{data.name}</h5>
+                          {data.verified &&
+                            <Image src={VerifiedLogo} alt="verified" width={19.5} height={19.5} />
+                          }
+                        </div>
+                        <p className="text-base opacity-60 leading-6">{data.review}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute top-7 left-[unset] right-8 border-none shadow-none" />
+            <CarouselNext className="absolute top-7 right-0 border-none shadow-none" />
+          </Carousel>
+        </div>
+      </div>
     </div>
   )
 }
