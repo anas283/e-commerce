@@ -25,8 +25,8 @@ export default function ProductCard(props: Props) {
   }
 
   return (
-    <Link href="product-detail">
-      <div className="w-[295px] h-[298px] rounded-[20px] bg-[#F0EEED] overflow-hidden flex justify-center items-center">
+    <Link href="product-detail" className="flex flex-col mx-auto">
+      <div className="w-[200px] h-[200px] sm:w-[295px] sm:h-[298px] rounded-[20px] bg-[#F0EEED] overflow-hidden flex justify-center items-center">
         <Image
           src={props.data.image}
           alt={props.data.title}
