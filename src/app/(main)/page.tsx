@@ -27,7 +27,7 @@ import StarFull from "../../../public/star-full.svg";
 import StarHalf from "../../../public/star-half.svg";
 import VerifiedLogo from "../../../public/verified.svg";
 
-const integralCF = localFont({
+export const integralCF = localFont({
   src: "../fonts/integralcf-bold.woff",
 });
 
