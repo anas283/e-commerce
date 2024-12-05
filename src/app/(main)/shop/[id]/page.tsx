@@ -9,7 +9,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { integralCF } from "../../page"
 import Tshirt1Image from "../../../../../public/t-shirts/t-shirt-1.svg"
 import Tshirt2Image from "../../../../../public/t-shirts/t-shirt-2.svg"
 import Tshirt3Image from "../../../../../public/t-shirts/t-shirt-3.svg"
@@ -25,6 +24,7 @@ import { useState } from "react"
 import { reviewsData } from "@/app/data/reviews"
 import { Card, CardContent } from "@/components/ui/card"
 import { renderStars } from "@/app/helper/render-stars"
+import { integralCF } from "@/app/helper/fonts"
 
 export default function ShopDetail() {
   const [tshirt, setTshirt] = useState(Tshirt1Image);

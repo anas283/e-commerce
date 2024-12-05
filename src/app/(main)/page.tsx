@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import localFont from "next/font/local";
 import Image from "next/image";
 import HeroImage from "../../../public/hero-image.png";
 import VersaceLogo from "../../../public/versace-logo.svg";
@@ -26,10 +25,7 @@ import { reviewsData } from "../data/reviews";
 import StarFull from "../../../public/star-full.svg";
 import StarHalf from "../../../public/star-half.svg";
 import VerifiedLogo from "../../../public/verified.svg";
-
-export const integralCF = localFont({
-  src: "../fonts/integralcf-bold.woff",
-});
+import { integralCF } from "../helper/fonts";
 
 export default function Home() {
 
