@@ -37,10 +37,22 @@ import {
 
 export default function ShopDetail() {
   const [tshirt, setTshirt] = useState(Tshirt1Image);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState('1');
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuantity(e.target.value)
+  }
+
+  const addQuantity = () => {
+    const newQuantity = Number(quantity) + 1;
+    setQuantity(newQuantity.toString());
+  }
+
+  const removeQuantity = () => {
+    if (Number(quantity) > 0) {
+      const newQuantity = Number(quantity) - 1;
+      setQuantity(newQuantity.toString());
+    }
   }
 
   return (
@@ -162,15 +174,15 @@ export default function ShopDetail() {
             <div className="pt-4 grid grid-cols-3 gap-3">
               <div>
                 <div className="bg-[#F0F0F0] rounded-full h-11 flex justify-between items-center px-3">
-                  <Minus className="cursor-pointer" />
+                  <Minus className="cursor-pointer" onClick={removeQuantity} />
                   <div>
                     <Input 
                       value={quantity} 
                       onChange={handleChange}
-                      className="text-sm font-medium border-0 p-0 shadow-none w-4 text-center focus-visible:ring-0" 
+                      className="xl:w-full text-sm font-medium border-0 p-0 shadow-none w-4 text-center focus-visible:ring-0" 
                     />
                   </div>
-                  <Plus className="cursor-pointer" />
+                  <Plus className="cursor-pointer" onClick={addQuantity} />
                 </div>
               </div>
               <div className="col-span-2">
